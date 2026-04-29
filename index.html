@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصحف فارس عباد</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="icon" type="image/png" href="app-icon.png">
+
+</head>
+<body>
+
+    <header>
+        <h1>القرآن الكريم بصوت الشيخ فارس عباد</h1>
+        <input type="text" id="searchInput" placeholder="ابحث عن سورة...">
+    </header>
+
+    <main id="surahContainer">
+        </main>
+
+    <div class="player-bar">
+        <p id="nowPlaying">اختر سورة للاستماع</p>
+        <audio id="mainAudio" controls></audio>
+    </div>
+
+    <script src="ADD.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./SW.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker failed', err));
+            });
+        }
+    </script>
+</body>
+</html>

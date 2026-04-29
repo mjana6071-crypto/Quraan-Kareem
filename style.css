@@ -1,0 +1,90 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #d581c0;
+    margin: 0;
+    padding-bottom: 120px;
+    direction: rtl; /* لضمان اتجاه النص العربي */
+}
+
+header {
+    background-color: #313fe2;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* للتأكد أنه فوق السور */
+    background-color: #751468;
+    padding: 20px;
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+#surahContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.surah-card {
+    background: rgb(166, 104, 156);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+.surah-card:hover { transform: translateY(-5px); }
+
+.btn-group { display: flex; gap: 10px; }
+
+.play-btn, .download-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.play-btn { background-color: #75177c; color: white; }
+.download-btn { background-color:#75177c; color: white; }
+
+/* شريط التقدم */
+.progress-wrapper {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #d581c0;
+    border-top: 5px solid#75177c;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+audio { width: 90%; max-width: 800px; }
